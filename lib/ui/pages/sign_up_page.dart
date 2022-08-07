@@ -61,6 +61,28 @@ class SignUpPage extends StatelessWidget {
         child: Column(
           children: [
             emailInput(),
+            Container(
+              width: double.infinity,
+              height: 55,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/bonus');
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                ),
+                child: Text(
+                  'Get Started',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       );
