@@ -13,7 +13,6 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    // TODO: implement initState
     Timer(const Duration(seconds: 3), () {
       Navigator.pushNamed(context, '/get-started');
     });
