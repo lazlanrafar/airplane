@@ -6,6 +6,29 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: primaryColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Image(
+              image: AssetImage('assets/logo.png'),
+              width: 100,
+              height: 100,
+            ),
+            const SizedBox(height: 50),
+            Text(
+              'AIRPLANE',
+              style: whiteTextStyle.copyWith(
+                fontSize: 32,
+                fontWeight: medium,
+                letterSpacing: 10,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
