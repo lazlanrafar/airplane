@@ -1,4 +1,5 @@
 import 'package:airplane/ui/widgets/custom_button.dart';
+import 'package:airplane/ui/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -21,34 +22,6 @@ class SignUpPage extends StatelessWidget {
     }
 
     Widget form() {
-      Widget emailInput() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Full Name',
-              ),
-              const SizedBox(height: 6),
-              TextFormField(
-                cursorColor: blackColor,
-                decoration: InputDecoration(
-                  hintText: 'Enter your full name',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: primaryColor),
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }
-
       return Container(
         margin: const EdgeInsets.only(top: 30),
         padding: const EdgeInsets.symmetric(
@@ -61,7 +34,24 @@ class SignUpPage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            emailInput(),
+            const CustomTextField(
+              label: 'Full Name',
+              placeholder: 'Enter your full name',
+            ),
+            const CustomTextField(
+              label: 'Email Address',
+              placeholder: 'email address',
+            ),
+            const CustomTextField(
+              label: 'Password',
+              placeholder: 'password',
+              isPassword: true,
+            ),
+            const CustomTextField(
+              label: 'Hobby',
+              placeholder: 'hobby',
+              margin: EdgeInsets.only(bottom: 30),
+            ),
             CustomButton(
               text: 'Get Started',
               onPressed: () {
