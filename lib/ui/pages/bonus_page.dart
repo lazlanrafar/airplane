@@ -24,6 +24,7 @@ class BonusPage extends StatelessWidget {
           ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -68,6 +69,21 @@ class BonusPage extends StatelessWidget {
                 )
               ],
             ),
+            const SizedBox(height: 40),
+            Text(
+              'Balance',
+              style: whiteTextStyle.copyWith(
+                fontSize: 14,
+                fontWeight: light,
+              ),
+            ),
+            Text(
+              'IDR 280.000.000',
+              style: whiteTextStyle.copyWith(
+                fontSize: 26,
+                fontWeight: medium,
+              ),
+            ),
           ],
         ),
       );
@@ -80,6 +96,52 @@ class BonusPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             bonusCard(),
+            Container(
+              margin: const EdgeInsets.only(top: 80),
+              child: Column(
+                children: [
+                  Text(
+                    'Big Bonus 🎉',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 32,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'We give you early credit so that\nyou can buy a flight ticket',
+                    style: grayTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: light,
+                    ),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: 220,
+              height: 55,
+              margin: const EdgeInsets.only(top: 50),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/sign-up');
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                ),
+                child: Text(
+                  'Start Fly Now',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
