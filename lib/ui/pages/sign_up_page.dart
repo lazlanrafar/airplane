@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -61,28 +62,12 @@ class SignUpPage extends StatelessWidget {
         child: Column(
           children: [
             emailInput(),
-            Container(
-              width: double.infinity,
-              height: 55,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/bonus');
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                ),
-                child: Text(
-                  'Get Started',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 18,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-            )
+            CustomButton(
+              text: 'Get Started',
+              onPressed: () {
+                Navigator.pushNamed(context, '/bonus');
+              },
+            ),
           ],
         ),
       );
