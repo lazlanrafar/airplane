@@ -1,3 +1,4 @@
+import 'package:airplane/ui/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -6,29 +7,29 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget navItem({required String imageUrl, bool isActive = false}) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(),
-          Image(
-            image: AssetImage(imageUrl),
-            height: 24,
-            width: 24,
-          ),
-          Container(
-            width: 30,
-            height: 2,
-            decoration: BoxDecoration(
-              color: isActive ? primaryColor : transparent,
-              borderRadius: BorderRadius.circular(18),
-            ),
-          )
-        ],
-      );
-    }
-
     Widget tabNavigator() {
+      Widget navItem({required String imageUrl, bool isActive = false}) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(),
+            Image(
+              image: AssetImage(imageUrl),
+              height: 24,
+              width: 24,
+            ),
+            Container(
+              width: 30,
+              height: 2,
+              decoration: BoxDecoration(
+                color: isActive ? primaryColor : transparent,
+                borderRadius: BorderRadius.circular(18),
+              ),
+            )
+          ],
+        );
+      }
+
       return Align(
         alignment: Alignment.bottomCenter,
         child: Container(
@@ -62,11 +63,16 @@ class MainPage extends StatelessWidget {
       );
     }
 
+    Widget buildContent() {
+      return HomePage();
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Stack(
         children: [
           tabNavigator(),
+          buildContent(),
         ],
       ),
     );

@@ -61,6 +61,7 @@ flutter:
     - assets/
     - assets/icon/
     - assets/icon/tab-nav/
+    - assets/dummy/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
