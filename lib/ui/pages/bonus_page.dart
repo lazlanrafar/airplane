@@ -125,7 +125,7 @@ class BonusPage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 50),
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/sign-up');
+                  Navigator.pushNamed(context, '/main');
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: primaryColor,
