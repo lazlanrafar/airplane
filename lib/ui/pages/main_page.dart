@@ -6,6 +6,28 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget navItem({required String imageUrl, bool isActive = false}) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const SizedBox(),
+          Image(
+            image: AssetImage(imageUrl),
+            height: 24,
+            width: 24,
+          ),
+          Container(
+            width: 30,
+            height: 2,
+            decoration: BoxDecoration(
+              color: isActive ? primaryColor : transparent,
+              borderRadius: BorderRadius.circular(18),
+            ),
+          )
+        ],
+      );
+    }
+
     Widget tabNavigator() {
       return Align(
         alignment: Alignment.bottomCenter,
@@ -18,81 +40,21 @@ class MainPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  const Image(
-                    image: AssetImage('assets/icon/tab-nav/ic-home.png'),
-                    height: 24,
-                    width: 24,
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
+              navItem(
+                imageUrl: 'assets/icon/tab-nav/ic-home.png',
+                isActive: true,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  const Image(
-                    image: AssetImage('assets/icon/tab-nav/ic-booking.png'),
-                    height: 24,
-                    width: 24,
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: transparent,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
+              navItem(
+                imageUrl: 'assets/icon/tab-nav/ic-booking.png',
+                isActive: false,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  const Image(
-                    image: AssetImage('assets/icon/tab-nav/ic-card.png'),
-                    height: 24,
-                    width: 24,
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: transparent,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
+              navItem(
+                imageUrl: 'assets/icon/tab-nav/ic-card.png',
+                isActive: false,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  const Image(
-                    image: AssetImage('assets/icon/tab-nav/ic-settings.png'),
-                    height: 24,
-                    width: 24,
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: transparent,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
+              navItem(
+                imageUrl: 'assets/icon/tab-nav/ic-settings.png',
+                isActive: false,
               ),
             ],
           ),
