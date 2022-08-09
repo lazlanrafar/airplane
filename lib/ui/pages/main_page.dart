@@ -65,8 +65,8 @@ class MainPage extends StatelessWidget {
 
     Widget buildContent() {
       return Container(
-        margin: EdgeInsets.only(bottom: 60),
-        child: HomePage(),
+        margin: const EdgeInsets.only(bottom: 60),
+        child: const HomePage(),
       );
     }
 
