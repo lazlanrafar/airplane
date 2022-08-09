@@ -64,15 +64,18 @@ class MainPage extends StatelessWidget {
     }
 
     Widget buildContent() {
-      return HomePage();
+      return Container(
+        margin: EdgeInsets.only(bottom: 60),
+        child: HomePage(),
+      );
     }
 
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Stack(
         children: [
-          tabNavigator(),
           buildContent(),
+          tabNavigator(),
         ],
       ),
     );
