@@ -17,63 +17,68 @@ class DestinationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.only(bottom: 16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(defaultRadius),
-        color: whiteColor,
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(defaultRadius),
-              image: DecorationImage(
-                image: AssetImage(imgUrl),
-                fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/detail');
+      },
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(bottom: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(defaultRadius),
+          color: whiteColor,
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(defaultRadius),
+                image: DecorationImage(
+                  image: AssetImage(imgUrl),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: blackTextStyle.copyWith(
-                    fontSize: 18,
-                    fontWeight: medium,
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: blackTextStyle.copyWith(
+                      fontSize: 18,
+                      fontWeight: medium,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  city,
-                  style: grayTextStyle.copyWith(
-                    fontSize: 14,
-                    fontWeight: light,
-                  ),
-                )
-              ],
+                  Text(
+                    city,
+                    style: grayTextStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: light,
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          const Image(
-            image: AssetImage('assets/icon/ic-star.png'),
-            width: 20,
-            height: 20,
-          ),
-          const SizedBox(width: 2),
-          Text(
-            rating.toString(),
-            style: blackTextStyle.copyWith(
-              fontSize: 14,
-              fontWeight: medium,
+            const Image(
+              image: AssetImage('assets/icon/ic-star.png'),
+              width: 20,
+              height: 20,
             ),
-          )
-        ],
+            const SizedBox(width: 2),
+            Text(
+              rating.toString(),
+              style: blackTextStyle.copyWith(
+                fontSize: 14,
+                fontWeight: medium,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
